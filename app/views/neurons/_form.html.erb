@@ -1,0 +1,61 @@
+<%= form_for @neuron, :html => {:multipart => true} do |f| %>
+  <% if @neuron.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@neuron.errors.count, "error") %> prohibited this neuron from being saved:</h2>
+
+      <ul>
+      <% @neuron.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Name: <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    Date: <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    Labels: <%= f.text_field :labels %>
+  </div>
+  <div class="field">
+    Content: <br /> <%= f.text_area :content, :cols => 80, :rows => 15 %>
+  </div>
+  <div class="newPaperclipFiles">
+        <%= f.fields_for :assets do |asset| %>
+           <% if asset.object.new_record? %>
+                 <%= asset.file_field :document %>
+           <% end %>
+       <% end %>
+  </div>
+  <br />
+  <br />
+  
+  <div class="portfolio">
+     <% empty_portfolio=true %>
+     <% f.fields_for :assets do |asset| %>
+        
+          <% unless asset.object.new_record? %>
+        
+            <div class="thumbnail">            
+              <%= link_to(file_icon_image(asset.object), asset.object.document.url(:original)) %>
+              Delete the file? <%= asset.check_box :_destroy %> (yes if checked)
+            </div>
+          <% empty_portfolio=false %>
+          <% end %>        
+        
+     <% end %>
+          
+    <% unless empty_portfolio==false %>
+        <%= "Empty portfolio"  %>
+      <% end %>
+  </div>
+  <br />
+  <br />
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

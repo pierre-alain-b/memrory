@@ -1,0 +1,37 @@
+<h1>Show the neuron <%= @neuron.id %></h1>
+
+<p>
+  <b>Name:</b>
+  <%= @neuron.name %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @neuron.date %>
+</p>
+
+<p>
+  <b>Neuron's labels</b>
+  <%= @neuron.labels %>
+</p>
+
+<b>Neuron's content</b>
+<div class="neuron">  
+    <%= RDiscount.new(@neuron.content).to_html.html_safe %>    
+</div>
+
+<b>Neuron's portfolio</b>
+<p class="portfolio">
+    <% empty_portfolio=true %>
+    <% @neuron.assets.each do |asset| %>    
+    <%= link_to( file_icon_image(asset), asset.document.url(:original)) + asset.file_name + " (" + number_to_human_size(asset.file_size) + ")"  %> 
+    <br/>
+    <% empty_portfolio=false %>
+    <% end %>
+    <% unless empty_portfolio==false %>
+        <%= "Empty portfolio"  %>
+    <% end %>
+</p>
+
+<%= link_to 'Edit', edit_neuron_path(@neuron) %> |
+<%= link_to 'Back', neurons_path %>

@@ -1,0 +1,22 @@
+<h1>Listing neurons</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @neurons.each do |neuron| %>
+  <tr>
+    <td><%= neuron.name %></td>
+    <td><%= neuron.date %></td>
+    <td><%= link_to 'Show', neuron %></td>
+    <td><%= link_to 'Edit', edit_neuron_path(neuron) %></td>
+    <td><%= link_to 'Destroy', neuron, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

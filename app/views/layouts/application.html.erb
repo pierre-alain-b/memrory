@@ -1,0 +1,87 @@
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Brain@memrory</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1><%= link_to "<span>Brain</span>@memrory</a>".html_safe, :controller=>"neurons", :action=>"new" %></h1>
+			</div>
+			<div id="menu">
+				<ul>
+          <li <%= @tab=="new" ? 'class="current_page_item"'.html_safe : '' %> > <%= link_to "Add a neuron", :controller =>"neurons", :action => "new" %></li>
+					<li <%= @tab=="browse" ? 'class="current_page_item"'.html_safe : '' %> ><%= link_to "Browse the brain", :controller =>"neurons", :action => "list" %></li>
+          <li <%= @tab=="synapses" ? 'class="current_page_item"'.html_safe : '' %> ><%= link_to "Synapses", :controller =>"neurons", :action => "synapses" %></li>
+					<li <%= @tab=="schizo" ? 'class="current_page_item"'.html_safe : '' %> ><%= link_to "Schizophrenia", :controller =>"neurons", :action => "synapses" %></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+      
+		<div id="content">
+      <% if flash[:notice] -%>
+        <div id="notice"><%= flash[:notice] %></div>
+      <% end -%>
+  
+      <% if flash[:error] -%>
+        <div id="error"><%= flash[:notice] %></div>
+      <% end -%>
+  
+      <% if flash[:warning] -%>
+        <div id="warning"><%= flash[:warning] %></div>
+      <% end -%>
+      
+      <%= yield %>
+    </div>
+
+    <div id="sidebar">
+			<ul>
+				<li>
+					<h2>Search</h2>
+					<div id="search" >
+						<form method="get" action="#">
+							<div>
+								<input type="text" name="s" id="search-text" value="" />
+								<input type="submit" id="search-submit" value="GO" />
+							</div>
+						</form>
+					</div>
+					<div style="clear: both;">&nbsp;</div>
+				</li>
+				<li>
+					<h2>Last neurons added</h2>
+					  <ul>
+              <li>Neuron 1</li>
+              <li>Neuron 2</li>
+            </ul>
+				</li>
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+
+  </div>
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<!-- end #page -->
+</div>
+<div id="footer">
+	<p>Brain@memrory is a Ruby on Rails application developed by PAB in 2010.</p>
+</div>
+<!-- end #footer -->
+
+</body>
+</html>
