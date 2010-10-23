@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <b>Neuron's labels</b>
-  <%= @neuron.labels %>
+  <b>Neuron's labels:</b>
+  <%= display_labels(@neuron.labels).html_safe %>
 </p>
 
 <b>Neuron's content</b>

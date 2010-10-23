@@ -1,5 +1,6 @@
 module NeuronsHelper
   
+  #Use the appropriate icon image
   def file_icon_image(upload,size='48px')
     extension = File.extname(upload.file_name).downcase
     if extension.length > 0
@@ -15,6 +16,16 @@ module NeuronsHelper
     else
       image_tag("file_icons/#{size}/_blank.png")
     end
+  end
+  
+  # Transform the list of labels in a list of links to display neurons with same label
+  def display_labels(strLabels)
+    labels = ""
+    strArray = strLabels.split(" ")
+    strArray.each { |label|
+      labels = labels.to_str + link_to(label.to_str, :controller=>"neurons", :action=>"label", :id=>label.to_str) + " "
+    }
+    labels
   end
   
 end

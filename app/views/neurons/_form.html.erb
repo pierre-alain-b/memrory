@@ -35,7 +35,7 @@
   
   <div class="portfolio">
      <% empty_portfolio=true %>
-     <% f.fields_for :assets do |asset| %>
+     <%= f.fields_for :assets do |asset| %>
         
           <% unless asset.object.new_record? %>
         

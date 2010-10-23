@@ -117,6 +117,30 @@ a:hover {
 	color: #45302C;
 }
 
+/* Default table style */
+.table-with-style
+{
+  width:600px;
+  border-collapse: collapse;
+	text-align: left;
+}
+.table-with-style th
+{    
+	font-weight: bold;
+	color: red;
+	padding: 6px 8px;
+	border-bottom: 2px solid red;
+}
+.table-with-style td
+{
+  border-bottom: 1px solid #BDBDBD;  
+	padding: 6px 8px;
+}
+.table-with-style tbody tr:hover td
+{  
+  background-color: #F5A9A9;
+}
+
 /* Search */
 
 #search {
@@ -360,7 +384,6 @@ a:hover {
 #footer a {
 	color: #6B4A45;
 }
-
 
 /* Styles for RoR mechanics */
 

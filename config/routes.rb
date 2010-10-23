@@ -1,11 +1,16 @@
 Memrory::Application.routes.draw do
+  
   resources :neurons do
     collection do
+      get "search"
       get "list"
       get "synapses"
     end
   end
 
+  match 'neurons/label/:id' => 'neurons#label'
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

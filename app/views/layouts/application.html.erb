@@ -33,17 +33,13 @@ Released for free under a Creative Commons Attribution 2.5 License
 	<div id="page">
       
 		<div id="content">
-      <% if flash[:notice] -%>
-        <div id="notice"><%= flash[:notice] %></div>
-      <% end -%>
-  
-      <% if flash[:error] -%>
-        <div id="error"><%= flash[:notice] %></div>
-      <% end -%>
-  
-      <% if flash[:warning] -%>
-        <div id="warning"><%= flash[:warning] %></div>
-      <% end -%>
+      <%- flash.each do |key, msg| -%>
+	      <div id="<%= key %>">
+          <span style="float:right;"><%= link_to_function 'X', "Effect.Fade('#{key}')" %></span>
+          <%= msg %>
+		      <div class="clear"></div>
+	      </div>
+      <%- end -%>
       
       <%= yield %>
     </div>
@@ -53,12 +49,10 @@ Released for free under a Creative Commons Attribution 2.5 License
 				<li>
 					<h2>Search</h2>
 					<div id="search" >
-						<form method="get" action="#">
-							<div>
-								<input type="text" name="s" id="search-text" value="" />
-								<input type="submit" id="search-submit" value="GO" />
-							</div>
-						</form>
+            <%= form_tag "/neurons/search/", :method => 'get' do %>
+            <%= text_field_tag :search, params[:search], :id => "search-text", :size => "20" %>
+            <%= submit_tag "Search", :name => nil, :id => "search-submit", :value => "GO" %>
+            <% end %>
 					</div>
 					<div style="clear: both;">&nbsp;</div>
 				</li>
