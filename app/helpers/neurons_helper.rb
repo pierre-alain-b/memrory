@@ -20,12 +20,17 @@ module NeuronsHelper
   
   # Transform the list of labels in a list of links to display neurons with same label
   def display_labels(strLabels)
+    unless strLabels.nil?
     labels = ""
-    strArray = strLabels.split(" ")
+    strArray = strLabels.split(",")
     strArray.each { |label|
+      label=label.strip
       labels = labels.to_str + link_to(label.to_str, :controller=>"neurons", :action=>"label", :id=>label.to_str) + " "
     }
     labels
+    else
+      ""
+    end
   end
   
 end

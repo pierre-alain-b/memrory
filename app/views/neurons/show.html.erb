@@ -20,7 +20,7 @@
     <%= RDiscount.new(@neuron.content).to_html.html_safe %>    
 </div>
 
-<b>Neuron's portfolio</b>
+<b>Neuron's assets</b>
 <p class="portfolio">
     <% empty_portfolio=true %>
     <% @neuron.assets.each do |asset| %>    

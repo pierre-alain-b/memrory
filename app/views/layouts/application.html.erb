@@ -22,9 +22,10 @@ Released for free under a Creative Commons Attribution 2.5 License
 			<div id="menu">
 				<ul>
           <li <%= @tab=="new" ? 'class="current_page_item"'.html_safe : '' %> > <%= link_to "Add a neuron", :controller =>"neurons", :action => "new" %></li>
-					<li <%= @tab=="browse" ? 'class="current_page_item"'.html_safe : '' %> ><%= link_to "Browse the brain", :controller =>"neurons", :action => "list" %></li>
+					<li <%= @tab=="browse" ? 'class="current_page_item"'.html_safe : '' %> ><%= link_to "Browse", :controller =>"neurons", :action => "list" %></li>
           <li <%= @tab=="synapses" ? 'class="current_page_item"'.html_safe : '' %> ><%= link_to "Synapses", :controller =>"neurons", :action => "synapses" %></li>
-					<li <%= @tab=="schizo" ? 'class="current_page_item"'.html_safe : '' %> ><%= link_to "Schizophrenia", :controller =>"neurons", :action => "synapses" %></li>
+					<li <%= @tab=="schizo" ? 'class="current_page_item"'.html_safe : '' %> ><%= link_to "Schizophrenia", :controller =>"users", :action => "index" %></li>
+          <li><%= link_to "Out!", :controller =>"auth", :action => "logout" %></li>
 				</ul>
 			</div>
 		</div>
@@ -45,7 +46,7 @@ Released for free under a Creative Commons Attribution 2.5 License
     </div>
 
     <div id="sidebar">
-			<ul>
+      <ul>        
 				<li>
 					<h2>Search</h2>
 					<div id="search" >

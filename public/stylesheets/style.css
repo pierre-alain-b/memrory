@@ -5,7 +5,6 @@ Released for free under a Creative Commons Attribution 2.5 License
 */
 
 body {
-	margin: 20px 0px 0px 0px;
 	padding: 5px;
 	background: #FFFFFF;
   background-image:url('/images/brain.jpg');
@@ -17,11 +16,8 @@ body {
 }
 
 h1, h2, h3 {
-	margin: 0;
-  margin-bottom: 10px;
-	padding: 0;
 	font-weight: normal;
-	color: #FF3000;
+	color: red;
 }
 
 h1 {
@@ -58,6 +54,10 @@ a:hover {
 	text-decoration: none;
 }
 
+img {
+  border:0;
+}
+
 #wrapper {
 	margin: 0 auto;
 	padding: 0;
@@ -91,6 +91,7 @@ a:hover {
 	text-transform: lowercase;
 	font-size: 2.8em;
 	color: #0C0C0C;
+  margin:10px;
 }
 
 #logo h1 a {
@@ -143,24 +144,20 @@ a:hover {
 
 /* Search */
 
-#search {
+#search {}
 
-}
+#search form {}
 
-#search form {
-
-}
-
-#search fieldset {
-}
+#search fieldset {}
 
 #search-text {
 	border: solid;
 	border-color: red;
 	background: #E7E7E7;
 	text-transform: lowercase;
-	font: normal 14px;
-	color: red;
+  font: normal;
+  font-size:18px;
+  color: red;  
 }
 
 #search-submit {
@@ -189,7 +186,7 @@ a:hover {
 	display: block;
 	float: left;
 	height: 37px;
-	padding: 13px 30px 0px 30px;
+	padding: 13px 29px 0px 29px;
 	text-decoration: none;
 	text-transform: uppercase;
 	font-family: Arial, Helvetica, sans-serif;
@@ -217,16 +214,13 @@ a:hover {
 	border-top: 1px solid #BBBBBB;
 }
 
-#page-bgtop {
-}
+
 /* Content */
 
 #content {
 	float: left;
 	width: 660px;
-	padding: 0px 0px 0px 0px;
 }
-
 
 .post {
 	margin-bottom: 30px;
@@ -384,6 +378,44 @@ a:hover {
 #footer a {
 	color: #6B4A45;
 }
+
+/* Stylize form*/
+#stylized {
+font-size:16px;
+}
+
+#stylized h1 {}
+
+#stylized p {}
+
+#stylized label{
+display:block;
+font-weight:bold;
+text-align:right;
+width:140px;
+float:left;
+}
+
+#stylized .small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:140px;
+}
+
+#stylized input, textarea, select {
+font-size:16px;
+padding:4px 2px;
+border:solid 1px red;
+margin:2px 0 20px 10px;
+}
+
+#stylized input, textarea {
+width:500px;
+}
+
 
 /* Styles for RoR mechanics */
 

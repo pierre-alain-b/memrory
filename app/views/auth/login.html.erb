@@ -1,0 +1,16 @@
+<div id="stylized">
+
+<%= form_tag do %>
+  
+      <label>Username</label>
+  		  <%= text_field_tag :name, params[:name] %>
+      
+    		<label>Password</label>
+    		<%= password_field_tag :password, params[:password] %>
+        
+    		<label>&nbsp;</label>
+    		<%= submit_tag "Sign in" %>
+
+<% end %>
+
+</div>

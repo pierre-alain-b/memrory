@@ -1,10 +1,17 @@
 Memrory::Application.routes.draw do
   
+  match 'login' => 'auth#login'
+  match 'logout' => 'auth#logout'
+  
+  resources :users
+
   resources :neurons do
     collection do
       get "search"
       get "list"
       get "synapses"
+      post "login"
+      get "logout"
     end
   end
 

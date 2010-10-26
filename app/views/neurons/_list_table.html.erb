@@ -9,7 +9,7 @@
 
 <% @neurons.each do |neuron| %>
   <tr>
-    <td><%= neuron.name %></td>
+    <td><%= link_to neuron.name, neuron %></td>
     <td><%= neuron.date %></td>
     <td><%= link_to image_tag("/images/look.gif"), neuron %></td>
     <td><%= link_to image_tag("/images/edit.gif"), edit_neuron_path(neuron) %></td>

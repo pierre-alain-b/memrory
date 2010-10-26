@@ -96,12 +96,15 @@ class NeuronsController < ApplicationController
   
 	# Executes a search query on the database (cf. model file for the definition of Neuron.search)
 	def search
+    @tab = "browse"
     @query=params[:search]
     @neurons = Neuron.search(params[:search])
   end
   
   def label
+    @tab = "browse"
     @label=params[:id]
     @neurons = Neuron.search_label(params[:id])    
   end
+  
 end
