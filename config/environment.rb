@@ -6,4 +6,4 @@ Memrory::Application.initialize!
 
 gem "paperclip"
 gem "rdiscount"
-
+gem "will_paginate"

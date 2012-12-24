@@ -60,8 +60,9 @@ Released for free under a Creative Commons Attribution 2.5 License
 				<li>
 					<h2>Last neurons added</h2>
 					  <ul>
-              <li>Neuron 1</li>
-              <li>Neuron 2</li>
+              <% Neuron.last_ones.each do |l| %>
+              <li><a href='<%= url_for l %>'><%= l.name %></a></li>
+              <% end %>
             </ul>
 				</li>
 			</ul>

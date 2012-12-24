@@ -11,7 +11,7 @@ class NeuronsController < ApplicationController
     
   def list
     @tab = "browse"
-    @neurons = Neuron.all
+    @neurons = Neuron.paginate(:page => params[:page], :per_page => 20).order('id DESC')
 
     respond_to do |format|
       format.html # list.html.erb
@@ -98,7 +98,7 @@ class NeuronsController < ApplicationController
 	def search
     @tab = "browse"
     @query=params[:search]
-    @neurons = Neuron.search(params[:search])
+    @neurons = Neuron.paginate(:page => params[:page], :per_page => 20).search(params[:search])
   end
   
   def label

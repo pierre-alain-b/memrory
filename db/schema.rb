@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -14,8 +15,8 @@ ActiveRecord::Schema.define(:version => 20101026202924) do
 
   create_table "assets", :force => true do |t|
     t.integer  "neuron_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.string   "document_file_name"
     t.string   "document_content_type"
     t.integer  "document_file_size"
@@ -25,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20101026202924) do
     t.string   "name"
     t.date     "date"
     t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "labels"
   end
 
@@ -34,8 +35,8 @@ ActiveRecord::Schema.define(:version => 20101026202924) do
     t.string   "name"
     t.string   "hashed_password"
     t.string   "salt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

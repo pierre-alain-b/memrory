@@ -19,6 +19,10 @@ class Neuron < ActiveRecord::Base
            else
            	   find(:all, :order => 'LOWER(name) ASC')
            end
-  end  
+  end 
+  
+  def self.last_ones
+    last = Neuron.order("created_at DESC").limit(4)
+  end
   
 end
