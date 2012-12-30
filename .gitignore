@@ -30,6 +30,7 @@
 *.sqlite3
 config/database.yml
 config/site.yml
+config/app.yml
 .bundle
 
 # OS generated files #

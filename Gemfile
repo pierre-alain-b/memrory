@@ -8,6 +8,7 @@ gem 'rails', '3.2.9'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'will_paginate'
+gem 'mail'
 
 # Use unicorn as the web server
 # gem 'unicorn'

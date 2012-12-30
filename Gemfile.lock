@@ -97,6 +97,7 @@ PLATFORMS
 
 DEPENDENCIES
   jquery-rails
+  mail
   paperclip
   rails (= 3.2.9)
   rdiscount

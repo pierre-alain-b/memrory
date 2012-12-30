@@ -1,0 +1,9 @@
+imap_host: host
+imap_port: 993
+imap_ssl: true
+imap_user: user
+imap_email: email@host.fr
+imap_password: password
+warning_email: warnme@host.fr
+token_email: 123456
+token_action: 123456

@@ -2,6 +2,7 @@ Memrory::Application.routes.draw do
   
   match 'login' => 'auth#login'
   match 'logout' => 'auth#logout'
+  match 'checkbrainmailbox' => 'auth#checkbrainmailbox'
   
   resources :users
 
