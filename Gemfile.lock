@@ -45,6 +45,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.5.0)
+    mysql2 (0.3.11)
     paperclip (3.4.0)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -98,6 +99,7 @@ PLATFORMS
 DEPENDENCIES
   jquery-rails
   mail
+  mysql2
   paperclip
   rails (= 3.2.9)
   rdiscount

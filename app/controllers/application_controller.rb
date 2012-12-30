@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_filter :authorize, :except => :login
+  before_filter :authorize, :except => [:login, :checkbrainmailbox]
   
   protect_from_forgery
   

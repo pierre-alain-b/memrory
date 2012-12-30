@@ -25,8 +25,8 @@ class AuthController < ApplicationController
     session[:user_id]=nil    
 		redirect_to(:controller=>"neurons", :action=>"index")
   end
-  
 
+  # Go through the IMAP server and checks for new neurons to be added
   def checkbrainmailbox
     #Check if token is present
     logger.info params["token"]

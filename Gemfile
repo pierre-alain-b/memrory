@@ -6,6 +6,7 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'mysql2'
 gem 'jquery-rails'
 gem 'will_paginate'
 gem 'mail'
